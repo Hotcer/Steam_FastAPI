@@ -15,6 +15,10 @@ df2 = pd.read_csv('./new_users_reviews.csv')
 df = pd.read_csv('./new_steam_games.csv', low_memory=False)
 
 #creacion de los endpoint, podemos usar los tags para agrupar las rutas de la aplicacion
+@app.get("/")
+def read_root():
+    # Agregamos un retorno con un mensaje personalizado
+    return {"Hello": "World", "Mensaje": "¡Bienvenidos a mi proyecto de MLOps!"}
 
 @app.get('/PlayTime', tags=['General'])
 async def playTimeGenre(genero: str):

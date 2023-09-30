@@ -22,6 +22,9 @@ def read_root():
 
 @app.get('/PlayTime', tags=['M.V.P'])
 async def playTimeGenre(genero: str):
+    if not genero.istitle():
+        return {"error": "El género debe comenzar con mayúscula."}
+
     juegos_genero = df[df['genres'].str.contains(genero)]
 
     df1_subset = df1[df1['item_id'].isin(juegos_genero['item_id'])][["item_id", "playtime_forever"]]
@@ -48,39 +51,43 @@ async def playTimeGenre(genero: str):
 
     return resultado
 
+
 @app.get('/UserForGenre', tags=['M.V.P'])  
 def UserForGenre(genero: str):
+    if not genero.istitle():
+        return {"error": "El género debe comenzar con mayúscula."}
 
-  # Filter games by genre
-  juegos_genero = df[df['genres'].str.contains(genero, case=False)]  
+    # Filter games by genre
+    juegos_genero = df[df['genres'].str.contains(genero, case=False)]  
 
-  if juegos_genero.empty:
-    return f"No games found for genre {genero}"
+    if juegos_genero.empty:
+        return f"No games found for genre {genero}"
 
-  # Group playtime by user and sum  
-  horas_por_usuario = df1.groupby('user_id')['playtime_forever'].sum()
+    # Group playtime by user and sum  
+    horas_por_usuario = df1.groupby('user_id')['playtime_forever'].sum()
 
-  if horas_por_usuario.empty:
-    return "No playtime data found"   
+    if horas_por_usuario.empty:
+        return "No playtime data found"   
 
-  # Get user with most hours played
-  top_user = horas_por_usuario.idxmax()
+    # Get user with most hours played
+    top_user = horas_por_usuario.idxmax()
 
-  # Extract year from games
-  juegos_genero['year'] = pd.to_datetime(juegos_genero['release_date'], errors='coerce').dt.year
+    # Extract year from games
+    juegos_genero['year'] = pd.to_datetime(juegos_genero['release_date'], errors='coerce').dt.year
 
-  # Group playtime by year and sum
-  horas_por_anio = horas_por_usuario.groupby(juegos_genero['year']).sum()
+    # Group playtime by year and sum
+    horas_por_anio = horas_por_usuario.groupby(juegos_genero['year']).sum()
 
-  # Format hours played by year  
-  horas_jugadas = [{"Año": year, "Horas": horas}  
+    # Format hours played by year  
+    horas_jugadas = [{"Año": year, "Horas": horas}  
                     for year, horas in horas_por_anio.items()]
 
-  # Return expected output format
-  return {
-    "Usuario con más horas jugadas para Género": top_user,
-    "Horas jugadas": horas_jugadas
-  }
+    # Return expected output format
+    return {
+        "Usuario con más horas jugadas para Género": top_user,
+        "Horas jugadas": horas_jugadas
+    }
+
 
 
 

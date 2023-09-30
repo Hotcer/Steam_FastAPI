@@ -20,7 +20,7 @@ def read_root():
     # Agregamos un retorno con un mensaje personalizado
     return {"Hello": "World", "Mensaje": "¡Bienvenidos a mi proyecto de MLOps!"}
 
-@app.get('/PlayTime', tags=['General'])
+@app.get('/PlayTime')
 async def playTimeGenre(genero: str):
     juegos_genero = df[df['genres'].str.contains(genero)]
 
@@ -48,7 +48,7 @@ async def playTimeGenre(genero: str):
 
     return resultado
 
-@app.get('/UserForGenre', tags=['General'])  
+@app.get('/UserForGenre')  
 def UserForGenre(genero: str):
 
   # Filter games by genre
@@ -162,7 +162,7 @@ def sentiment_analysis(anio:str):
             (f"Negativo: {review_counts['Negative Reviews']}")}
     return result
 
-@app.get("/recomendacion_usuario/{id_de_usuario}")
+@app.get("/recomendacion_usuario/{id_de_usuario}", tags=['Machine Learning'])
 def recomendacion_usuario(id_usuario: int):
     # Cargar el archivo CSV
     df1 = pd.read_csv('new_users_item.csv')
@@ -199,7 +199,7 @@ def recomendacion_usuario(id_usuario: int):
     # Devolver las top 5 recomendaciones
     return list(items_recomendados.index)[:5]
   
-@app.get("/recomendacion_juego/{id_juego}")
+@app.get("/recomendacion_juego/{id_juego}", tags=['Machine Learning'])
 def recomendacion_juego(id_juego):
 
   # Leer datos

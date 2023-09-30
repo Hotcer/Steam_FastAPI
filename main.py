@@ -88,10 +88,6 @@ def UserForGenre(genero: str):
         "Horas jugadas": horas_jugadas
     }
 
-
-
-
-
 @app.get("/UsersRecommend/{year}", tags=['M.V.P'])
 async def UsersRecommend(year: int):
 

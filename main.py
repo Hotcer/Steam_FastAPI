@@ -235,11 +235,4 @@ def recomendacion_juego(id_juego):
 
   
   
-# Llamada a la función con un identificador de juego válido
-id_juego = 80  # Reemplaza con un ID de juego real
-recomendaciones = recomendacion_juego(id_juego)
 
-# Imprime las recomendaciones
-print("Recomendaciones para el juego con ID", id_juego, ":")
-for i, juego_id in enumerate(recomendaciones, 1):
-    print(f"{i}. Juego ID: {juego_id}")

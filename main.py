@@ -15,12 +15,12 @@ df2 = pd.read_csv('./new_users_reviews.csv')
 df = pd.read_csv('./new_steam_games.csv', low_memory=False)
 
 #creacion de los endpoint, podemos usar los tags para agrupar las rutas de la aplicacion
-@app.get("/")
+@app.get("/", tags=['M.V.P'])
 def read_root():
     # Agregamos un retorno con un mensaje personalizado
     return {"Hello": "World", "Mensaje": "¡Bienvenidos a mi proyecto de MLOps!"}
 
-@app.get('/PlayTime')
+@app.get('/PlayTime', tags=['M.V.P'])
 async def playTimeGenre(genero: str):
     juegos_genero = df[df['genres'].str.contains(genero)]
 
@@ -48,7 +48,7 @@ async def playTimeGenre(genero: str):
 
     return resultado
 
-@app.get('/UserForGenre')  
+@app.get('/UserForGenre', tags=['M.V.P'])  
 def UserForGenre(genero: str):
 
   # Filter games by genre
@@ -85,7 +85,7 @@ def UserForGenre(genero: str):
 
 
 
-@app.get("/UsersRecommend/{year}")
+@app.get("/UsersRecommend/{year}", tags=['M.V.P'])
 async def UsersRecommend(year: int):
 
   df2['clean_date'] = pd.to_datetime(df2['clean_date'])
@@ -109,7 +109,7 @@ async def UsersRecommend(year: int):
 
 
 # @app.get('/Usuario por genero', tags=['General'])
-@app.get("/UsersNotRecommend/{year}")
+@app.get("/UsersNotRecommend/{year}", tags=['M.V.P'])
 async def UsersNotRecommend(year: int):
 
   df2['clean_date'] = pd.to_datetime(df2['clean_date'])
@@ -149,7 +149,7 @@ def get_review_counts_for_year(df, year):
     }
     
 
-@app.get('/Analisis de sentimiento')
+@app.get('/Analisis de sentimiento', tags=['M.V.P'])
 def sentiment_analysis(anio:str):
     countreviews = df2[['user_id', 'clean_date', 'sentiment_analysis']].copy()
     countreviews['clean_date'] = pd.to_datetime(countreviews['clean_date'], errors='coerce')

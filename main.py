@@ -10,9 +10,9 @@ app.description= 'Proyecto Individual N1'
 #Agrego contacto de github y mail
 app.contact = {"name": "Hotcer", "url": "https://github.com/Hotcer", "email": "davisguarico27@gmail.com"}
 
-df1 = pd.read_csv('./new_users_item.csv')
-df2 = pd.read_csv('./new_users_reviews.csv')
-df = pd.read_csv('./new_steam_games.csv', low_memory=False)
+df1 = pd.read_csv('./Datos_CSV/new_users_item.csv')
+df2 = pd.read_csv('./Datos_CSV/new_users_reviews.csv')
+df = pd.read_csv('./Datos_CSV/new_steam_games.csv', low_memory=False)
 
 #creacion de los endpoint, podemos usar los tags para agrupar las rutas de la aplicacion
 @app.get("/")

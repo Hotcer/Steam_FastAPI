@@ -20,7 +20,8 @@ Creé una nueva columna llamada 'sentiment_analysis' en el conjunto de datos 'us
 
 ### Desarrollo de la API
 
-Desarrollé una API utilizando el framework FastAPI para proporcionar acceso a los datos de Steam. Creé los siguientes puntos finales (endpoints) con los decoradores apropiados:
+Desarrollé una API utilizando el framework FastAPI para proporcionar acceso a los datos de Steam. Puedes acceder a la [API aquí](https://steamgames-fastapi.onrender.com/docs#/).
+
 
 1. `PlayTimeGenre(género: str)`: Devuelve el año con más horas jugadas para el género dado.
 

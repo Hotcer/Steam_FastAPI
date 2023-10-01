@@ -65,3 +65,4 @@ El punto final de la API para esta funcionalidad es `recomendacion_usuario(id de
 
 Concluí el proyecto siguiendo estas pautas y completando las tareas propuestas, contribuyendo así al desarrollo de un potente sistema de recomendación para la plataforma de videojuegos de Steam. ¡Fue un proyecto emocionante y enriquecedor!
 
+[![agaradecimeintos.jpg](https://i.postimg.cc/65y6W3jk/agaradecimeintos.jpg)](https://postimg.cc/HV113pCz)

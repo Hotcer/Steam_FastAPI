@@ -1,6 +1,6 @@
 # Mi Proyecto: Sistema de Recomendación de Videojuegos para Steam
 
-
+![](https://github.com/Hotcer/Steam_FastAPI/blob/master/imagenes/1.jpg)
 Este es mi README para un proyecto que he realizado con el objetivo de crear un sistema de recomendación basado en machine learning para Steam, una plataforma multinacional de videojuegos. Como científico de datos en Steam, mi rol fue desarrollar un sistema que recomendara videojuegos a los usuarios. El proyecto abarcó diversas etapas, incluyendo ingeniería de datos, desarrollo de API, análisis exploratorio de datos (EDA) y creación de modelos de machine learning.
 
 ## Descripción del Problema

@@ -52,7 +52,7 @@ Implementé la API utilizando la plataforma de Render, asegurándome de que fuer
 Conduje un análisis exploratorio de datos para investigar las relaciones entre las variables del conjunto de datos, identificar valores atípicos o anomalías y descubrir patrones interesantes. Generé nubes de palabras para visualizar las palabras más frecuentes en los títulos de los juegos, lo cual podría ser útil para el sistema de predicción.
 
 ## Modelo de Machine Learning
-
+[![3.jpg](https://i.postimg.cc/B66GQ7Zq/3.jpg)](https://postimg.cc/sBtLTcZ8)
 Después de limpiar y hacer que los datos fueran consumibles a través de la API, entrené un modelo de machine learning para construir un sistema de recomendación. Opté por desarrollar un Sistema de Recomendación de Usuarios-Ítems que recomienda juegos a un usuario en función de las preferencias de usuarios similares.
 
 El punto final de la API para esta funcionalidad es `recomendacion_usuario(id del usuario)`.

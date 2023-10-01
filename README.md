@@ -66,3 +66,4 @@ El punto final de la API para esta funcionalidad es `recomendacion_usuario(id de
 Concluí el proyecto siguiendo estas pautas y completando las tareas propuestas, contribuyendo así al desarrollo de un potente sistema de recomendación para la plataforma de videojuegos de Steam. ¡Fue un proyecto emocionante y enriquecedor!
 
 ![](https://github.com/Hotcer/Steam_FastAPI/blob/master/imagenes/agaradecimeintos.jpg?raw=true)
+[Visita mi página web](https://hotcer.github.io/)
